@@ -1,5 +1,5 @@
 //business logic
-pizzaPrice = 0;
+var pizzaPrice = 0;
 
 function Pizza (size, meat, veg, extra) {
   this.pizzaSize = size;
@@ -8,58 +8,42 @@ function Pizza (size, meat, veg, extra) {
   this.pizzaExtra = extra;
 }
 
-Pizza.prototype.PizzaSpecs = function () {
-  return this.pizzaSize + " " + this.pizzaMeat + " " + this.pizzaVeg + " " + this.pizzaExtra;
+function Address (street, city, state, zip) {
+  this.addressStreet = street;
+  this.addressCity = city;
+  this.addressState = state;
+  this.addressZip = zip;
+}
+
+Pizza.prototype.pizzaSpecs = function () {
+  return "The pizza you've ordered is as follows: " + this.pizzaSize + ", " + this.pizzaMeat + ", " + this.pizzaVeg + ", " + this.pizzaExtra + ".";
+}
+
+Address.prototype.addressSpecs = function() {
+  return "Confirm that your address is correct before proceeding with your order: " + this.addressStreet + ", " + this.addressCity + ", " + this.addressState + " " + this.addressZip + "";
 }
 
 Pizza.prototype.pizzaPrice = function() {
-  if (this.pizzaSize == "Small" && this.pizzaExtra == !true) {
-    pizzaPrice = 12.99;
-  } else if (this.pizzaSize == "Small" && this.pizzaExtra == true) {
-    pizzaPrice = 14.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Medium" && this.pizzaMeat == "Pepperoni" || "Sausage" && this.pizzaExtra == !true) {
-    pizzaPrice = 16.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Medium" && this.pizzaMeat == "Pepperoni" || "Sausage" && this.pizzaExtra == true) {
-    pizzaPrice = 17.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Medium" && this.pizzaMeat !== "Pepperoni" || "Sausage" && this.pizzaExtra == !true) {
-    pizzaPrice = 18.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Medium" && this.pizzaMeat !== "Pepperoni" || "Sausage" && this.pizzaExtra == true) {
-    pizzaPrice = 19.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Large" && this.pizzaMeat == "Pepperoni" || "Sausage" && this.pizzaExtra == !true) {
-    pizzaPrice = 20.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Large" && this.pizzaMeat == "Pepperoni" || "Sausage" && this.pizzaExtra == true) {
-    pizzaPrice = 21.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Large" && this.pizzaMeat !== "Pepperoni" || "Sausage" && this.pizzaExtra == !true) {
-    pizzaPrice = 22.99;
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
-  } else if (this.pizzaSize == "Large" && this.pizzaMeat !== "Pepperoni" || "Sausage" && this.pizzaExtra == true) {
-    pizzaPrice = 23.99
-    if (this.Meat || this.veg == "None") {
-      pizzaPrice = 10.99;
-    }
+  if (this.pizzaSize == "Small" && this.pizzaExtra == "None") {
+    return pizzaPrice = 12.99;
+  } else if (this.pizzaSize == "Small" && this.pizzaMeat == ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
+    return pizzaPrice = 14.99;
+  } else if (this.pizzaSize == "Medium" && this.pizzaMeat == ("Pepperoni" || "Sausage") && this.pizzaExtra == "None") {
+    return pizzaPrice = 16.99;
+  } else if (this.pizzaSize == "Medium" && this.pizzaMeat == ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
+    return pizzaPrice = 17.99;
+  } else if (this.pizzaSize == "Medium" && this.pizzaMeat !== ("Pepperoni" || "Sausage") && this.pizzaExtra == "None") {
+    return pizzaPrice = 18.99;
+  } else if (this.pizzaSize == "Medium" && this.pizzaMeat !== ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
+    return pizzaPrice = 19.99;
+  } else if (this.pizzaSize == "Large" && this.pizzaMeat == ("Pepperoni" || "Sausage") && this.pizzaExtra == "None") {
+    return pizzaPrice = 20.99;
+  } else if (this.pizzaSize == "Large" && this.pizzaMeat == ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
+    return pizzaPrice = 21.99;
+  } else if (this.pizzaSize == "Large" && this.pizzaMeat !== ("Pepperoni" || "Sausage") && this.pizzaExtra == "None") {
+    return pizzaPrice = 22.99;
+  } else if (this.pizzaSize == "Large" && this.pizzaMeat !== ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
+    return pizzaPrice = 23.99
   }
 }
 
@@ -79,15 +63,24 @@ $(document).ready(function() {
     var inputMeat = $(".meat-topping").val();
     var inputVeg = $(".veg-topping").val();
     var inputExtra = $(".extra-topping").val();
+    var inputStreet = $("#street").val();
+    var inputCity = $("#city").val();
+    var inputState = $("#state").val();
+    var inputZip = $("#zip").val();
 
     var newPizza = new Pizza(inputSize, inputMeat, inputVeg, inputExtra);
+    var newAddress = new Address(inputStreet, inputCity, inputState, inputZip);
     var priceOf = newPizza.pizzaPrice();
+    var specsOf = newPizza.pizzaSpecs();
+    var addressOf = newAddress.addressSpecs();
+
 
     $("#results").show();
     $("#priceOutput").text(priceOf);
     $("#nameOutput").text(inputName);
+    $("#pizzaDetails").text(specsOf);
+    $("#addressOutput").text(addressOf)
 console.log(priceOf);
-
   });
   $("#refresh").click(function(event) {
     event.preventDefault();

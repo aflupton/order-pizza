@@ -50,7 +50,7 @@
             <div class="form-group">
               <select class="meat-topping form-control">
                 <option value="">Select a meat topping</option>
-                <option value="None">None</option>
+                <option value="None">No Meat</option>
                 <option value="Pepperoni">Pepperoni</option>
                 <option value="Sausage">Sausage</option>
                 <option value="Prosciutto">Prosciutto</option>
@@ -59,7 +59,7 @@
             <div class="form-group">
               <select class="veg-topping form-control">
                 <option value="">Select a vegetable topping</option>
-                <option value="None">None</option>
+                <option value="None">No Veg</option>
                 <option value="Olives">Olives</option>
                 <option value="Mushroom">Mushrooms</option>
                 <option value="Artichoke">Artichokes</option>
@@ -68,31 +68,39 @@
             <div class="form-group">
               <select class="extra-topping form-control">
                 <option value="">Select an extra topping</option>
-                <option value="None">None</option>
+                <option value="None">No Extras</option>
                 <option value="Anchovies">Anchovies</option>
-                <option value="Buffalo-mozzarella">Buffalo Mozzarella</option>
-                <option value="Sun-dried">Sun-Dried Tomatoes</option>
+                <option value="Buffalo Mozzarella">Buffalo Mozzarella</option>
+                <option value="Sun-Dried Tomatoes">Sun-Dried Tomatoes</option>
               </select>
+            </div>
+
+            <div id="addressInput"class="form-group">
+              <br>
+              <input type="text" id="street" class="form-control" placeholder="Enter your house number and street:">
+              <br>
+              <input type="text" id="city" class="form-control" placeholder="Enter City:">
+              <br>
+              <input type="text" id="state" class="form-control" placeholder="Enter State:">
+              <br>
+              <input type="text" id="zip" class="form-control" placeholder="Enter Zip Code:">
+              <br>
             </div>
             <button type="submit" class="btn btn-info" id="submit">Submit</button>
             <button type="button" class="btn btn-info" id="refresh">Refresh</button>
           </form>
           <!-- end of form -->
         </div>
-      </div>
-      <!-- start of results -->
-      <div class="row" id="results">
-          <div class="col-md-6">
-            <ul id="pizzaDetails">
-
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <p><span id="nameOutput"></span>, the price of your pizza is: $<span id="priceOutput"></span> plus tax.</p>
-          </div>
-      <!-- end of results -->
+        <!-- start of results -->
+        <div class="col-md-6" id="results">
+          <p><strong><span id="nameOutput"></span></strong>, the price of your pizza is: $<strong><span id="priceOutput"></span></strong> plus tax.</p>
+          <p id="pizzaDetails"></p>
+          <p><span id="addressOutput"></span>
+        </div>
+        <!-- end of results -->
       </div>
       <!-- end of row -->
+
       <!-- start of footer -->
       <div class="row">
         <div class="col-md-12">
