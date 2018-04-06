@@ -1,6 +1,10 @@
 //business logic
 var pizzaPrice = 0;
 
+function refresh() {
+  location.reload();
+};
+
 function Pizza (size, meat, veg, extra) {
   this.pizzaSize = size;
   this.pizzaMeat = meat;
@@ -44,13 +48,11 @@ Pizza.prototype.pizzaPrice = function() {
     return pizzaPrice = 22.99;
   } else if (this.pizzaSize == "Large" && this.pizzaMeat !== ("Pepperoni" || "Sausage") && this.pizzaExtra == ("Anchovies" || "Buffalo Mozzarella" || "Sun-Dried Tomatoes")) {
     return pizzaPrice = 23.99
+  } else {
+    alert("Please enter values in the spaces provided.")
+    refresh();
   }
 }
-
-function refresh() {
-  location.reload();
-};
-
 
 //UI logic
 $(document).ready(function() {
