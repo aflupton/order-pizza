@@ -33,4 +33,4 @@ _HTML, CSS, Javascript, Jquery, and Bootstrap_
 
 *MIT License*
 
-Copyright (c) 2016 **_Andrew Lupton_**
+Copyright (c) 2018 **_Andrew Lupton_**
