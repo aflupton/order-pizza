@@ -4,16 +4,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
-    <script src="js/scripts.js"type="text/javascript"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
     <title>Epicodus's Pizza Parlor</title>
-
   </head>
   <body>
     <div class="container">
+      <!-- main header -->
       <h1 class="display-2"><em>Epicodus's Pizza Parlor</em></h1>
-        <small><em>(206) 684-4000</em> • 1201 3rd Ave, Seattle, WA 98101</small> <br>
+        <small><em>(206) 684-4000</em> • 1201 3rd Ave, Seattle, WA 98101 • Be Nice, Eat Pizza</small> <br>
+      <!-- end of main header -->
       <br>
+      <!-- start of images -->
       <div class="row">
         <div class="col-md-12">
           <img id="image1" src="img/pizza2.jpg" alt="A delicious pizza">
@@ -21,59 +23,86 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <img id="image2" src="img/pizza3.jpg" alt="A delicious pizza">
+          <img id="image2" src="img/pizza3.jpg" alt="Another delicious pizza">
         </div>
         <div class="col-md-6">
-          <img id="image3" src="img/pizza1.jpg" alt="A delicious pizza">
+          <img id="image3" src="img/pizza1.jpg" alt="A third delicious pizza">
         </div>
       </div>
+      <!-- end of images -->
+      <!-- start of form -->
+      <div class="row">
+        <div class="col-md-6">
+          <form id="userInput">
+            <h4><em>Enter your preferences and click submit to see your final price.</em></h4>
+            <div class="form-group">
+              <label for="label"><em>Order Form:</em></label>
+              <input id="nameInput" class="form-control" type="text" placeholder="Enter Name:">
+            </div>
+            <div class="form-group">
+              <select class="size form-control">
+                <option value="">Select a size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="meat-topping form-control">
+                <option value="">Select a meat topping</option>
+                <option value="None">None</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Sausage">Sausage</option>
+                <option value="Prosciutto">Prosciutto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="veg-topping form-control">
+                <option value="">Select a vegetable topping</option>
+                <option value="None">None</option>
+                <option value="Olives">Olives</option>
+                <option value="Mushroom">Mushrooms</option>
+                <option value="Artichoke">Artichokes</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="extra-topping form-control">
+                <option value="">Select an extra topping</option>
+                <option value="None">None</option>
+                <option value="Anchovies">Anchovies</option>
+                <option value="Buffalo-mozzarella">Buffalo Mozzarella</option>
+                <option value="Sun-dried">Sun-Dried Tomatoes</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-info" id="submit">Submit</button>
+            <button type="button" class="btn btn-info" id="refresh">Refresh</button>
+          </form>
+          <!-- end of form -->
+        </div>
+      </div>
+      <!-- start of results -->
+      <div class="row" id="results">
+          <div class="col-md-6">
+            <ul id="pizzaDetails">
 
-      <form id="userInput" action="index.html" method="post">
-        <h4><em>Enter your preferences and click submit to see your final price.</em></h4>
-        <div class="form-group">
-          <label for="nameInput">Name:</label>
-          <input id="nameInput" class="form-control" type="text" value="" placeholder="Enter Name:">
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <p><span id="nameOutput"></span>, the price of your pizza is: $<span id="priceOutput"></span> plus tax.</p>
+          </div>
+      <!-- end of results -->
+      </div>
+      <!-- end of row -->
+      <!-- start of footer -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer">
+            <footer>©️ Andrew Lupton, 2018.</footer>
+          </div>
         </div>
-        <div class="form-group">
-          <select class="size form-control">
-            <option value="">Select a size</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="meat-topping form-control">
-            <option value="">Select a meat topping</option>
-            <option value="None">None</option>
-            <option value="Pepperoni">Pepperoni</option>
-            <option value="Sausage">Sausage</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="veg-topping form-control">
-            <option value="">Select a vegetable topping</option>
-            <option value="None">None</option>
-            <option value="Olives">Olives</option>
-            <option value="Mushroom">Mushrooms</option>
-            <option value="Artichoke">Artichokes</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="extra-topping form-control">
-            <option value="">Select an extra topping</option>
-            <option value="None">None</option>
-            <option value="Anchovies">Anchovies</option>
-            <option value="Buffalo-mozzarella">Buffalo Mozzarella</option>
-            <option value="Sun-dried">Sun-Dried Tomatoes</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-info" id="submit">Submit</button>
-        <button type="button" class="btn btn-info" id="refresh">Refresh</button>
-      </form>
-      <div class="results">
-        <p><span id="nameOutput"></span>, the price of your pizza is: <span id="price"></span>.</p>
-     </div>
+      </div>
+      <!-- end of footer -->
     </div>
+    <!-- end of container -->
   </body>
 </html>

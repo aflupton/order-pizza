@@ -1,17 +1,29 @@
-.userInput {
-  width: 50%;
-  float: left;
-}
-.results {
-  /*display: none;*/
-  float: right;
-  font-weight: 400;
-  font-size: 14pt;
-}
 h1 {
   color: black;
   text-decoration: underline;
   margin-top: 10px;
+}
+footer {
+  position:  relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: inherit;
+  color: lightgray;
+  text-align: center;
+}
+#userInput {
+  width: 100%;
+  margin-bottom: 50px;
+}
+#results {
+  display: none;
+  width: 50%;
+  font-weight: 400;
+  font-size: 14pt;
+  margin-bottom: 50px;
+  font-style: italic;
+  
 }
 #image1 {
   max-width: 100%;
